@@ -13,7 +13,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntity;
@@ -187,7 +186,7 @@ public class HttpUtils {
 			HttpEntity resEntity = response.getEntity();
 			return EntityUtils.toByteArray(resEntity);
 		} catch (Exception e) {
-			logger.error("postFile请求异常，" + e.getMessage() + "\n post url:" + url);
+			logger.error("getFile请求异常，" + e.getMessage() + "\n post url:" + url);
 			e.printStackTrace();
 		}
 		return null;
